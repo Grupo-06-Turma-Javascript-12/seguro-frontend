@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { DiferenciaisSection } from "../../components/section/DiferenciaisSection";
 
 function Home() {
@@ -24,7 +25,7 @@ function Home() {
               </button>
 
               <button className="px-6 py-3 border border-[#D4AF37] text-[#D4AF37] rounded-lg hover:bg-[#D4AF37] hover:text-[#0F3B5F] transition-all duration-300">
-                Conhecer Planos
+                <Link to='/categorias' className='hover:underline'>Conhecer Planos</Link>
               </button>
             </div>
           </div>
@@ -75,7 +76,7 @@ function Home() {
                          hover:-translate-y-2 hover:shadow-2xl hover:brightness-110
                          focus:outline-none focus:ring-4 focus:ring-[#D4AF37]/50"
             >
-              Simular Seguro
+              <Link to='/cadastrarseguro'>Simular Seguro</Link>
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </button>
           </div>
