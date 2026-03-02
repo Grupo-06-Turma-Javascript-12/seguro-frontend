@@ -141,6 +141,18 @@ function FormSeguro() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="valor">Valor</label>
+          <input
+            type="number"
+            placeholder="valor"
+            name="valor_apolice"
+            required
+            className="border-2 border-slate-700 rounded p-2"
+            value={seguro.valor_apolice}
+            onChange={(e) => setSeguro({...seguro, valor_apolice: parseFloat(e.target.value)})}
+          />
+        </div>
 
         <div className="flex flex-col gap-2">
           <p>Categoria do Seguro</p>
