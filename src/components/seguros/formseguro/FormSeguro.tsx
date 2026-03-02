@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import type { Categoria } from "../../../models/Categoria";
 import type { Seguro } from "../../../models/Seguro";
+import type { Usuario } from "../../../models/Usuario";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 
@@ -17,6 +18,14 @@ function FormSeguro() {
   const [seguro, setSeguro] = useState<Seguro>({} as Seguro);
 
   const { id } = useParams<{ id: string }>();
+
+  const [usuario, setUsuario] = useState<Usuario>({
+    id: 1,
+    nome: "",
+    usuario: "",
+    senha: "",
+    foto: ""
+  })
 
   async function buscarSeguroPorId(id: string) {
     try {
@@ -61,7 +70,8 @@ function FormSeguro() {
     setSeguro({
       ...seguro,
       [e.target.name]: e.target.value,
-      categoria: categoria
+      categoria: categoria,
+      usuario: usuario
     });
   }
 
@@ -75,7 +85,8 @@ function FormSeguro() {
 
     if (id !== undefined) {
       try {
-        await atualizar(`/seguros`, seguro, setSeguro);
+        console.log(JSON.stringify(seguro, null, 2));
+        await atualizar(`/seguros/`, seguro, setSeguro);
 
         ToastAlerta('Seguro atualizado com sucesso', 'sucesso');
       } catch {
@@ -106,11 +117,11 @@ function FormSeguro() {
       <form className="flex flex-col w-1/2 gap-4"
         onSubmit={gerarNovoSeguro}>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Titulo do Seguro</label>
+          <label htmlFor="titulo">Numero da Apolice</label>
           <input
             type="text"
-            placeholder="Titulo"
-            name="titulo"
+            placeholder="Apolice"
+            name="numero_apolice"
             required
             className="border-2 border-slate-700 rounded p-2"
             value={seguro.numero_apolice}
@@ -119,14 +130,14 @@ function FormSeguro() {
         </div>
 
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Texto do Seguro</label>
+          <label htmlFor="titulo">Cobertura</label>
           <input
             type="text"
-            placeholder="Texto"
-            name="texto"
+            placeholder="Cobertura"
+            name="cobertura"
             required
             className="border-2 border-slate-700 rounded p-2"
-            value={seguro.status_cobertura}
+            value={seguro.cobertura}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
