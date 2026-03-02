@@ -3,9 +3,11 @@ import type { Usuario } from "./Usuario"
 
 export interface Seguro {
   id: number
-  titulo: string
-  texto: string
-  data: string
+  numero_apolice: string
+  valor_apolice: number
+  cobertura: string;
+  status_cobertura: string;
+  createdAt: Date
   categoria: Categoria | null
   usuario: Usuario | null
 }

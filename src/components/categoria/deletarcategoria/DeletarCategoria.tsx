@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { ClipLoader } from "react-spinners"
-import type { Categoria }from "../../../models/Categoria"
+import type { Categoria } from "../../../models/Categoria"
 import { buscar, deletar } from "../../../services/Service"
 
 function DeletarCategoria() {
@@ -15,7 +15,7 @@ function DeletarCategoria() {
 
   async function buscarPorId(id: string) {
     try {
-      await buscar(`/temas/${id}`, setCategorias)
+      await buscar(`/categoria/${id}`, setCategorias)
     } catch (error) {
       console.error(error)
     }
@@ -30,10 +30,10 @@ function DeletarCategoria() {
   async function deletarCategorias() {
     setIsLoading(true)
     try {
-      await deletar(`/temas/${id}`)
-      alert('Categorias apagado com sucesso')
+      await deletar(`/categoria/${id}`)
+      alert('Categoria apagada com sucesso')
     } catch {
-      alert('Erro ao deletar o tema.')
+      alert('Erro ao deletar a categoria.')
     } finally {
       setIsLoading(false)
       retornar()
@@ -41,14 +41,14 @@ function DeletarCategoria() {
   }
 
   function retornar() {
-    navigate("/temas")
+    navigate("/categorias")
   }
 
   return (
     <div className='container w-1/3 mx-auto'>
       <h1 className='text-4xl text-center my-4'>Deletar Categoria</h1>
       <p className='text-center font-semibold mb-4'>
-        Você tem certeza de que deseja apagar o tema a seguir?
+        Você tem certeza de que deseja apagar a categoria a seguir?
       </p>
 
       <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>

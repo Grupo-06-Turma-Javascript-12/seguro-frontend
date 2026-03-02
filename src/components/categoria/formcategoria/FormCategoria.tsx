@@ -1,8 +1,8 @@
-import { useState, useEffect, type ChangeEvent, type FormEvent } from "react";
+import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import type { Categoria } from "../../../models/Categoria";
-import { buscar, atualizar, cadastrar } from "../../../services/Service";
+import { atualizar, buscar, cadastrar } from "../../../services/Service";
 
 function FormCategorias() {
 
@@ -15,7 +15,7 @@ function FormCategorias() {
 
   async function buscarPorId(id: string) {
   try {
-    await buscar(`/categoriass/${id}`, setCategorias)
+    await buscar(`/categoria/${id}`, setCategorias)
   } catch (error) {
     console.error(error)
   }
@@ -35,7 +35,7 @@ function FormCategorias() {
   }
 
   function retornar() {
-    navigate("/categoriass")
+    navigate("/categorias")
   }
 
   async function gerarNovoCategorias(e: FormEvent<HTMLFormElement>) {
@@ -44,14 +44,14 @@ function FormCategorias() {
 
     if (id !== undefined) {
       try {
-        await atualizar(`/categoriass`, categorias, setCategorias)
+        await atualizar(`/categoria`, categorias, setCategorias)
         alert('O Categorias foi atualizado com sucesso!')
       } catch (error) {
         alert('Erro ao atualizar o categorias.')
       }
     } else {
       try {
-        await cadastrar(`/categoriass`, categorias, setCategorias)
+        await cadastrar(`/categoria`, categorias, setCategorias)
         alert('O Categorias foi cadastrado com sucesso!')
       } catch (error) {
         alert('Erro ao cadastrar o categorias.')

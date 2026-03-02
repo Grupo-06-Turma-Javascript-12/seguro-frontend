@@ -28,7 +28,7 @@ function FormSeguro() {
 
   async function buscarCategoriaPorId(id: string) {
     try {
-      await buscar(`/categorias/${id}`, setCategoria);
+      await buscar(`/categoria/${id}`, setCategoria);
     } catch {
       ToastAlerta("Categoria não encontrada", "erro")
     }
@@ -36,7 +36,7 @@ function FormSeguro() {
 
   async function buscarCategorias() {
     try {
-      await buscar('/categorias', setCategorias);
+      await buscar('/categoria', setCategorias);
     } catch {
       ToastAlerta("Erro ao buscar Categorias!", "erro")
     }
@@ -113,7 +113,7 @@ function FormSeguro() {
             name="titulo"
             required
             className="border-2 border-slate-700 rounded p-2"
-            value={seguro.titulo}
+            value={seguro.numero_apolice}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
@@ -126,7 +126,7 @@ function FormSeguro() {
             name="texto"
             required
             className="border-2 border-slate-700 rounded p-2"
-            value={seguro.texto}
+            value={seguro.status_cobertura}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>

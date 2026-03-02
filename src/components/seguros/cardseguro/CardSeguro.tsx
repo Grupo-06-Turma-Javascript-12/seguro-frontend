@@ -22,13 +22,9 @@ function CardSeguro({ seguro }: CardSegurosProps) {
                     </h3>
                 </div>
                 <div className='p-4 '>
-                    <h4 className='text-lg font-semibold uppercase'>{seguro.titulo}</h4>
-                    <p>{seguro.texto}</p>
-                    <p>Tema: {seguro.categoria?.descricao}</p>
-                    <p>Data: {new Intl.DateTimeFormat("pt-BR", {
-                        dateStyle: 'full',
-                        timeStyle: 'medium',
-                    }).format(new Date(seguro.data))}</p>
+                    <h4 className='text-lg font-semibold uppercase'>{seguro.numero_apolice}</h4>
+                    <p>{seguro.cobertura}</p>
+                    <p>Categoria: {seguro.categoria?.descricao}</p>
                 </div>
             </div>
             <div className="flex">

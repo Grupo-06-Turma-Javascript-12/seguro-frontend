@@ -10,6 +10,7 @@ import DeletarSeguro from "./components/seguros/deletarseguro/DeletarSeguro";
 import FormSeguro from "./components/seguros/formseguro/FormSeguro";
 import ListaSeguros from "./components/seguros/listaseguro/ListaSeguro";
 import Home from "./pages/home/Home";
+import SobreNos from "./pages/sobrenos/SobreNos";
 
 function App() {
   return (
@@ -21,11 +22,13 @@ function App() {
         <div className="min-h-[80vh]">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/sobrenos" element={<SobreNos />} />
             <Route path="/categorias" element={<ListaCategorias />}></Route>
             <Route path="/cadastrarcategoria" element={<FormCategorias />} />
             <Route path="/editarcategoria/:id" element={<FormCategorias />} />
             <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
-            <Route path="/postagens" element={<ListaSeguros />} />
+            <Route path="/seguros" element={<ListaSeguros />} />
             <Route path="/cadastrarseguro" element={<FormSeguro />} />
             <Route path="/editarseguro/:id" element={<FormSeguro />} />
             <Route path="/deletarseguro/:id" element={<DeletarSeguro />} />
