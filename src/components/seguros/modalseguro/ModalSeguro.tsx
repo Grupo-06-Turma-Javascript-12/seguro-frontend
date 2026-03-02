@@ -10,7 +10,7 @@ function ModalSeguro() {
         trigger={
           <button
             className='border rounded px-4 py-2 hover:bg-white hover:text-indigo-800'>
-            Nova Seguro
+            Novo Seguro
           </button>
         }
         modal

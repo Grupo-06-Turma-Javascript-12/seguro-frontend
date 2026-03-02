@@ -3,6 +3,7 @@ import { SyncLoader } from "react-spinners";
 import type { Seguro } from "../../../models/Seguro";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 import CardSeguro from "../cardseguro/CardSeguro";
+import { buscar } from "../../../services/Service";
 
 function ListaSeguros() {
 
@@ -18,6 +19,7 @@ function ListaSeguros() {
         try {
 
             setIsLoading(true)
+            await buscar('/seguros', setSeguros)
 
         } catch {
             ToastAlerta("Erro ao buscar Seguro", "erro")
