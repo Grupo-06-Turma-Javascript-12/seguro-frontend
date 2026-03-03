@@ -32,7 +32,7 @@ function App() {
             <Route path="/seguros" element={<ListaSeguros />} />
             <Route path="/cadastrarseguro" element={<FormSeguro />} />
             <Route path="/editarseguro/:id" element={<FormSeguro />} />
-            <Route path="/statusseguro/:id/status" element={<StatusSeguro />} />
+            <Route path="/statusseguro/:id" element={<StatusSeguro />} />
             <Route path="/deletarseguro/:id" element={<DeletarSeguro />} />
           </Routes>
         </div>

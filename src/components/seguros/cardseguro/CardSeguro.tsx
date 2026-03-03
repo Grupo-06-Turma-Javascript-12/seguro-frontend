@@ -52,6 +52,9 @@ function CardSeguro({ seguro }: CardSegurosProps) {
                     {seguro.cobertura}
                 </p>
                 <p className='text-slate-600'>
+                    {seguro.status_cobertura}
+                </p>
+                <p className='text-slate-600'>
                     {new Intl.NumberFormat("pt-BR", 
                         {
                            currency: "BRL",
