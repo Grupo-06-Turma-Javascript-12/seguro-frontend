@@ -9,6 +9,7 @@ import Navbar from "./components/navbar/Navbar";
 import DeletarSeguro from "./components/seguros/deletarseguro/DeletarSeguro";
 import FormSeguro from "./components/seguros/formseguro/FormSeguro";
 import ListaSeguros from "./components/seguros/listaseguro/ListaSeguro";
+import StatusSeguro from "./components/seguros/statusseguro/StatusSeguro";
 import Home from "./pages/home/Home";
 import SobreNos from "./pages/sobrenos/SobreNos";
 
@@ -31,6 +32,7 @@ function App() {
             <Route path="/seguros" element={<ListaSeguros />} />
             <Route path="/cadastrarseguro" element={<FormSeguro />} />
             <Route path="/editarseguro/:id" element={<FormSeguro />} />
+            <Route path="/statusseguro/:id/status" element={<StatusSeguro />} />
             <Route path="/deletarseguro/:id" element={<DeletarSeguro />} />
           </Routes>
         </div>

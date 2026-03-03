@@ -50,45 +50,95 @@ function DeletarSeguro() {
     }
     
     return (
-        <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar Seguro</h1>
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
 
-            <p className='text-center font-semibold mb-4'>
-                Você tem certeza de que deseja apagar o seguro a seguir?
+        <div className="w-full max-w-xl">
+
+        <h1 className="text-4xl font-bold text-[#0F3B5F] text-center mb-6 tracking-wide">
+            Deletar Seguro
+        </h1>
+
+        <p className="text-center text-slate-600 mb-8">
+            Você tem certeza de que deseja apagar o seguro a seguir?
+        </p>
+
+        <div className="
+            bg-white
+            rounded-2xl
+            shadow-xl
+            border border-slate-200
+            overflow-hidden
+        ">
+
+            {/* Header */}
+            <div className="bg-[#0F3B5F] text-white px-6 py-4">
+            <h2 className="text-lg font-semibold tracking-wide">
+                Confirmação de Exclusão
+            </h2>
+            </div>
+
+            {/* Body */}
+            <div className="p-6 space-y-2">
+            <p className="text-xl font-bold text-[#0F3B5F]">
+                {seguro?.numero_apolice}
             </p>
 
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                <header 
-                    className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>
-                    Seguro
-                </header>
-                <div className="p-4">
-                    <p className='text-xl h-full'>{seguro.titulo}</p>
-                    <p>{seguro.texto}</p>
-                </div>
-                <div className="flex">
-                    <button 
-                        className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'
-                        onClick={retornar}>
-                        Não
-                    </button>
-                    <button 
-                        className='w-full text-slate-100 bg-indigo-400 
-                        hover:bg-indigo-600 flex items-center justify-center'
-                        onClick={deletarSeguro}>
-
-                        { isLoading ? 
-                            <ClipLoader 
-                                color="#ffffff" 
-                                size={24}
-                            /> : 
-                            <span>Sim</span>
-                        }
-                        
-                    </button>
-                </div>
+            <p className="text-slate-600">
+                {seguro?.cobertura}
+            </p>
             </div>
+
+            {/* Footer */}
+            <div className="flex border-t border-slate-200">
+
+            <button
+                className="
+                w-full
+                py-3
+                font-semibold
+                text-slate-600
+                hover:bg-slate-100
+                transition-all
+                duration-200
+                "
+                onClick={retornar}
+            >
+                Cancelar
+            </button>
+
+            <button
+                className="
+                w-full
+                py-3
+                font-semibold
+                text-white
+                bg-red-600
+                hover:bg-red-700
+                transition-all
+                duration-200
+                flex
+                items-center
+                justify-center
+                "
+                onClick={deletarSeguro}
+            >
+                {isLoading ? (
+                <ClipLoader
+                    color="#ffffff"
+                    size={20}
+                />
+                ) : (
+                <span>Confirmar Exclusão</span>
+                )}
+            </button>
+
+            </div>
+
         </div>
+
+        </div>
+
+    </div>
     )
 }
 

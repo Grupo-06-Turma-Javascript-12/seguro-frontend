@@ -46,34 +46,46 @@ function DeletarCategoria() {
 
   return (
     <div className='container w-1/3 mx-auto'>
-      <h1 className='text-4xl text-center my-4'>Deletar Categoria</h1>
-      <p className='text-center font-semibold mb-4'>
+      <h1 className='text-4xl text-center my-6 text-[#0F3B5F] font-bold'>
+        Deletar Categoria
+      </h1>
+
+      <p className='text-center font-semibold mb-6 text-slate-700'>
         Você tem certeza de que deseja apagar a categoria a seguir?
       </p>
 
-      <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-        <header className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>
-          Categorias
+      <div className='border border-[#0F3B5F] flex flex-col rounded-2xl overflow-hidden shadow-md'>
+
+        <header className='py-3 px-6 bg-[#0F3B5F] text-white font-bold text-xl text-center'>
+          Categoria
         </header>
 
-        <p className='p-8 text-3xl bg-slate-200 h-full'>{tema.descricao}</p>
+        <div className='p-6 bg-slate-50'>
+          <p className='text-2xl font-semibold text-center text-[#0F3B5F]'>
+            {tema.descricao}
+          </p>
+        </div>
 
         <div className="flex">
           <button
-            className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'
-            onClick={retornar}>
+            className='w-full py-3 font-semibold text-[#0F3B5F] bg-[#D4AF37] hover:brightness-110 transition duration-200'
+            onClick={retornar}
+          >
             Não
           </button>
 
           <button
-            className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-600 flex items-center justify-center'
-            onClick={deletarCategorias}>
-            {isLoading ?
-              <ClipLoader color="#ffffff" size={24} /> :
+            className='w-full py-3 font-semibold text-white bg-[#0F3B5F] hover:bg-[#0c2f4a] transition duration-200 flex items-center justify-center'
+            onClick={deletarCategorias}
+          >
+            {isLoading ? (
+              <ClipLoader color="#ffffff" size={24} />
+            ) : (
               <span>Sim</span>
-            }
+            )}
           </button>
         </div>
+
       </div>
     </div>
   )

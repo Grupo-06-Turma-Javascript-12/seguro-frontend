@@ -181,7 +181,7 @@ function FormSeguro() {
             duration-200
             "
             value={seguro.valor_apolice}
-            onChange={(e) => setSeguro({...seguro, valor_apolice: parseFloat(e.target.value)})}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
 

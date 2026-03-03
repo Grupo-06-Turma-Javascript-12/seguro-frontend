@@ -51,6 +51,13 @@ function CardSeguro({ seguro }: CardSegurosProps) {
                 <p className='text-slate-600'>
                     {seguro.cobertura}
                 </p>
+                <p className='text-slate-600'>
+                    {new Intl.NumberFormat("pt-BR", 
+                        {
+                           currency: "BRL",
+                           style: "currency"
+                        }).format(seguro.valor_apolice)}
+                </p>
 
                 <p className='text-sm'>
                     <span className='font-semibold text-[#0F3B5F]'>
@@ -79,6 +86,21 @@ function CardSeguro({ seguro }: CardSegurosProps) {
                     '
                 >
                     Editar
+                </Link>
+                <Link 
+                    to={`/statusseguro/${seguro.id}/`}
+                    className='
+                        w-full 
+                        text-center 
+                        py-3 
+                        font-semibold
+                        text-[#D4AF37]
+                        hover:bg-[#D4AF37]
+                        hover:text-white
+                        transition-colors duration-200
+                    '
+                >
+                    Status
                 </Link>
 
                 <Link 
