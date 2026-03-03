@@ -209,7 +209,7 @@ Desenvolvido pelo **Grupo 06** da **Turma JavaScript 12**.
         <sub><b>Wyrms Cordeiro</b></sub>
       </a><br>
       🔒
-      
+    </td>
 ---
 
 <div align="center">
