@@ -31,7 +31,7 @@ function TeamCard({ name, role, bio, image, linkedin }: TeamCardProps) {
       <p className="text-[#D4AF37] text-sm mb-2">{role}</p>
       <p className="text-slate-300 text-sm mb-4">{bio}</p>
 
-      {/* Divisor dourado */}
+ 
       <div className="w-10 h-0.5 bg-[#D4AF37] mx-auto mb-4" />
 
       <div className="flex justify-center">

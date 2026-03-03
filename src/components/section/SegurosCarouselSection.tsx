@@ -44,7 +44,7 @@ export function SegurosCarouselSection() {
     {
       nome: "Seguro Vida",
       tag: "Pessoas",
-      icon: "🫀",
+      icon: "🏥",
       descricao: "Proteção financeira para você e sua família.",
       accent: "#E8514A",
       highlight: "Cobertura vitalícia",

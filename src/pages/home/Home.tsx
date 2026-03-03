@@ -6,7 +6,7 @@ function Home() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-800">
       
-      {/* HERO */}
+
       <section className="bg-[#0F3B5F] text-white">
         <div className="container mx-auto px-6 py-20 grid md:grid-cols-2 items-center gap-12">
           
@@ -21,18 +21,18 @@ function Home() {
             </p>
 
             <div className="flex gap-4 flex-wrap">
-              <button className="px-6 py-3 bg-[#D4AF37] text-[#0F3B5F] font-semibold rounded-lg hover:brightness-110 transition-all duration-300">
-                Solicitar Cotação
-              </button>
+              <Link
+                to="/cadastrarseguro"
+              className="px-6 py-3 bg-[#D4AF37] text-[#0F3B5F] font-semibold rounded-lg hover:brightness-110 transition-all duration-300">
+                Simular Seguro </Link>
 
               <Link
               to="/categorias"
               className="px-6 py-3 border border-[#D4AF37] 
              text-[#D4AF37] rounded-lg 
              hover:bg-[#D4AF37] hover:text-[#0F3B5F] 
-             transition-all duration-300 inline-block"
-              >
-            Conhecer Planos
+             transition-all duration-300 inline-block">
+              Conhecer Planos
               </Link>
             </div>
           </div>
@@ -52,12 +52,11 @@ function Home() {
 
       <DiferenciaisSection />
 
-      {/* CTA FINAL PREMIUM */}
       <section className="relative overflow-hidden bg-[#0F3B5F] text-white py-28">
         
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0F3B5F] via-[#123E63] to-[#0B2C45]" />
-        <div className="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_50%_40%,_#D4AF37_0%,_transparent_65%)]" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-[2px] bg-[#D4AF37]" />
+        <div className="absolute inset-0 bg-linear-to-br from-[#0F3B5F] via-[#123E63] to-[#0B2C45]" />
+        <div className="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_50%_40%,#D4AF37_0%,transparent_65%)]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-0.5 bg-[#D4AF37]" />
 
         <div className="relative container mx-auto px-6 text-center max-w-5xl">
 
