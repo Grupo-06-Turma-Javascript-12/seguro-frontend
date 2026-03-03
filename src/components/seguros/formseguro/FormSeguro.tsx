@@ -116,7 +116,7 @@ function FormSeguro() {
 
       <form className="w-full max-w-2xl bg-white rounded-2xl shadow-xl border border-slate-200 p-10 space-y-6"
       onSubmit={gerarNovoSeguro}
->
+      >
         <div className="flex flex-col gap-2">
           <label className="text-sm font-semibold text-[#0F3B5F] tracking-wide" htmlFor="titulo">Numero da Apolice</label>
           <input

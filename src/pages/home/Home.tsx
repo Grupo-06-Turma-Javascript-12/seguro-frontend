@@ -1,106 +1,106 @@
-import { Link } from 'react-router-dom'
-import type { Seguro } from '../../models/Seguro'
+import { Link } from "react-router-dom";
+import { DiferenciaisSection } from "../../components/section/DiferenciaisSection";
+import SegurosCarouselSection from "../../components/section/SegurosCarouselSection";
 
+function Home() {
+  return (
+    <main className="min-h-screen bg-slate-50 text-slate-800">
+      
+      {/* HERO */}
+      <section className="bg-[#0F3B5F] text-white">
+        <div className="container mx-auto px-6 py-20 grid md:grid-cols-2 items-center gap-12">
+          
+          <div className="flex flex-col gap-6">
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+              Conectando você à segurança que realmente importa
+            </h1>
 
-interface CardSegurosProps {
-    seguro: Seguro
-}
+            <p className="text-lg text-slate-200">
+              A ELOSeguros une tecnologia, proteção e atendimento humanizado
+              para oferecer soluções completas em seguros.
+            </p>
 
-function CardSeguro({ seguro }: CardSegurosProps) {
-    return (
-        <div className='
-            bg-white 
-            rounded-2xl 
-            shadow-md 
-            hover:shadow-xl 
-            transition-all duration-300 
-            border border-slate-200
-            flex flex-col 
-            justify-between
-            overflow-hidden
-        '>
+            <div className="flex gap-4 flex-wrap">
+              <button className="px-6 py-3 bg-[#D4AF37] text-[#0F3B5F] font-semibold rounded-lg hover:brightness-110 transition-all duration-300">
+                Solicitar Cotação
+              </button>
 
-            {/* HEADER */}
-            <div className="flex items-center gap-4 
-                bg-[#0F3B5F] 
-                text-white 
-                py-4 px-5">
-
-                <img
-                    className='h-14 w-14 rounded-full object-cover border-2 border-[#D4AF37]'
-                    src={seguro.usuario?.foto || 'https://cdn-icons-png.flaticon.com/512/3177/3177440.png'}
-                    onError={(e) => e.currentTarget.src = 'https://cdn-icons-png.flaticon.com/512/3177/3177440.png'}
-                    alt="Foto do usuário"
-                />
-
-                <div>
-                    <h3 className='text-lg font-semibold uppercase tracking-wide'>
-                        {seguro.usuario?.nome}
-                    </h3>
-                    <span className='text-sm text-[#D4AF37]'>
-                        Titular da apólice
-                    </span>
-                </div>
+              <Link
+              to="/categorias"
+              className="px-6 py-3 border border-[#D4AF37] 
+             text-[#D4AF37] rounded-lg 
+             hover:bg-[#D4AF37] hover:text-[#0F3B5F] 
+             transition-all duration-300 inline-block"
+              >
+            Conhecer Planos
+              </Link>
             </div>
+          </div>
 
-            {/* BODY */}
-            <div className='p-6 space-y-3'>
-                <h4 className='text-xl font-bold text-[#0F3B5F]'>
-                    {seguro.numero_apolice}
-                </h4>
+          <div className="flex justify-center">
+            <img
+              src="https://ik.imagekit.io/ycn9hqmaw/Logo.hd?updatedAt=1772462577564"
+              alt="Clientes protegidos pela ELOSeguros"
+              className="rounded-2xl w-full max-w-md object-cover"
+            />
+          </div>
 
-                <p className='text-slate-600'>
-                    {seguro.cobertura}
-                </p>
-
-                <p className='text-sm'>
-                    <span className='font-semibold text-[#0F3B5F]'>
-                        Categoria:
-                    </span>{' '}
-                    <span className='text-slate-600'>
-                        {seguro.categoria?.descricao}
-                    </span>
-                </p>
-            </div>
-
-            {/* FOOTER */}
-            <div className="flex border-t border-slate-200">
-
-                <Link 
-                    to={`/editarseguro/${seguro.id}`}
-                    className='
-                        w-full 
-                        text-center 
-                        py-3 
-                        font-semibold
-                        text-[#0F3B5F]
-                        hover:bg-[#0F3B5F]
-                        hover:text-white
-                        transition-colors duration-200
-                    '
-                >
-                    Editar
-                </Link>
-
-                <Link 
-                    to={`/deletarseguro/${seguro.id}`}
-                    className='
-                        w-full 
-                        text-center 
-                        py-3 
-                        font-semibold
-                        text-red-600
-                        hover:bg-red-600
-                        hover:text-white
-                        transition-colors duration-200
-                    '
-                >
-                    Deletar
-                </Link>
-
-            </div>
         </div>
-    )
+      </section>
+
+      <SegurosCarouselSection />
+
+      <DiferenciaisSection />
+
+      {/* CTA FINAL PREMIUM */}
+      <section className="relative overflow-hidden bg-[#0F3B5F] text-white py-28">
+        
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0F3B5F] via-[#123E63] to-[#0B2C45]" />
+        <div className="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_50%_40%,_#D4AF37_0%,_transparent_65%)]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-[2px] bg-[#D4AF37]" />
+
+        <div className="relative container mx-auto px-6 text-center max-w-5xl">
+
+          <h2 className="text-4xl md:text-6xl font-bold leading-tight mb-8 tracking-tight">
+            Segurança é conexão.
+            <span className="block text-[#D4AF37]">
+              E a sua começa agora.
+            </span>
+          </h2>
+
+          <p className="text-lg md:text-xl text-slate-200 mb-12 leading-relaxed max-w-3xl mx-auto">
+            Tecnologia integrada ao backend ELO, atendimento humanizado
+            e proteção inteligente para tudo o que você construiu.
+          </p>
+
+          <div className="flex justify-center">
+            <button
+              className="group relative inline-flex items-center gap-3
+                         px-12 py-5
+                         bg-[#D4AF37] text-[#0F3B5F]
+                         font-bold text-lg
+                         rounded-2xl
+                         shadow-xl
+                         transition-all duration-300 ease-out
+                         hover:-translate-y-2 hover:shadow-2xl hover:brightness-110
+                         focus:outline-none focus:ring-4 focus:ring-[#D4AF37]/50"
+            >
+              <Link to='/cadastrarseguro'>Simular Seguro</Link>
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </button>
+          </div>
+
+          <div className="mt-12 flex justify-center gap-6 text-sm text-slate-300 flex-wrap">
+            <span>✔ Atendimento rápido</span>
+            <span>✔ 100% digital</span>
+            <span>✔ Transparência garantida</span>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  );
 }
 
-export default CardSeguro
+export default Home;
