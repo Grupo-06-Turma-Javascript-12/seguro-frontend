@@ -180,35 +180,37 @@ Desenvolvido pelo **Grupo 06** da **Turma JavaScript 12**.
         <img src="https://github.com/deboracamposs.png" width="120px;" alt="Foto de Débora Campos"/><br>
         <sub><b>Débora Campos</b></sub>
       </a><br>
-      👩🏻‍💼
+      🔒
     </td>
     <td align="center">
       <a href="https://github.com/paulobrandao26">
         <img src="https://github.com/paulobrandao26.png" width="120px;" alt="Foto de Paulo Brandão"/><br>
         <sub><b>Paulo Brandão</b></sub>
       </a><br>
-      👨🏻‍💼
+      🔒
     </td>
     <td align="center">
       <a href="https://github.com/rafaelbernardodev">
         <img src="https://github.com/rafaelbernardodev.png" width="120px;" alt="Foto de Rafael Bernardo"/><br>
         <sub><b>Rafael Bernardo</b></sub>
       </a><br>
-      👨🏻‍💼
+      🔒
     </td>
     <td align="center">
       <a href="https://github.com/ThaysPei">
         <img src="https://github.com/ThaysPei.png" width="120px;" alt="Foto de Thais Peixoto"/><br>
         <sub><b>Thais Peixoto</b></sub>
       </a><br>
-      👩🏻‍💼
+      🔒
     </td>
     <td align="center">
       <a href="https://github.com/WyrmsCordeiro">
         <img src="https://github.com/WyrmsCordeiro.png" width="120px;" alt="Foto de Wyrms Cordeiro"/><br>
         <sub><b>Wyrms Cordeiro</b></sub>
       </a><br>
-      👨🏻‍💼
+      🔒
+      
+---
 
 <div align="center">
   Feito com 💙 e ☕ pelo Grupo 06
