@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import type { Categoria } from "../../../models/Categoria";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormCategorias() {
 
@@ -14,12 +15,12 @@ function FormCategorias() {
   const { id } = useParams<{ id: string }>();
 
   async function buscarPorId(id: string) {
-  try {
-    await buscar(`/categoria/${id}`, setCategorias)
-  } catch (error) {
-    console.error(error)
+    try {
+      await buscar(`/categoria/${id}`, setCategorias)
+    } catch (error) {
+      console.error(error)
+    }
   }
-}
 
   useEffect(() => {
     if (id !== undefined) {
@@ -45,16 +46,16 @@ function FormCategorias() {
     if (id !== undefined) {
       try {
         await atualizar(`/categoria`, categorias, setCategorias)
-        alert('O Categorias foi atualizado com sucesso!')
+        ToastAlerta('O Categorias foi atualizado com sucesso!', 'sucesso')
       } catch (error) {
-        alert('Erro ao atualizar o categorias.')
+        ToastAlerta('Erro ao atualizar o categorias.', 'erro')
       }
     } else {
       try {
         await cadastrar(`/categoria`, categorias, setCategorias)
-        alert('O Categorias foi cadastrado com sucesso!')
+        ToastAlerta('O Categorias foi cadastrado com sucesso!', 'sucesso')
       } catch (error) {
-        alert('Erro ao cadastrar o categorias.')
+        ToastAlerta('Erro ao cadastrar o categorias.', 'erro')
       }
     }
 
@@ -63,33 +64,71 @@ function FormCategorias() {
   }
 
   return (
-    <div className="container flex flex-col items-center justify-center mx-auto">
-      <h1 className="text-4xl text-center my-8">
-        {id === undefined ? 'Cadastrar Categorias' : 'Editar Categorias'}
+    <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 py-10 px-4">
+
+      <h1 className="text-4xl font-bold text-[#0F3B5F] mb-10 text-center tracking-wide">
+        {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'}
       </h1>
 
-      <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoCategorias}>
+      <form
+        className="w-full max-w-xl bg-white rounded-2xl shadow-xl border border-slate-200 p-10 space-y-6"
+        onSubmit={gerarNovoCategorias}
+      >
+
         <div className="flex flex-col gap-2">
-          <label htmlFor="descricao">Descrição do Categorias</label>
+          <label
+            htmlFor="descricao"
+            className="text-sm font-semibold text-[#0F3B5F] tracking-wide"
+          >
+            Descrição da Categoria
+          </label>
+
           <input
             type="text"
-            placeholder="Descreva aqui seu categorias"
+            placeholder="Digite a descrição da categoria"
             name="descricao"
-            className="border-2 border-slate-700 rounded p-2"
+            className="
+              border border-slate-300
+              rounded-lg
+              px-4 py-3
+              focus:outline-none
+              focus:ring-2
+              focus:ring-[#D4AF37]
+              focus:border-[#D4AF37]
+              transition-all
+              duration-200
+            "
             value={categorias.descricao}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
 
         <button
-          className="rounded text-slate-100 bg-indigo-400 
-                     hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
-          type="submit">
+          className="
+            w-full
+            mt-4
+            py-3
+            rounded-xl
+            font-semibold
+            text-white
+            bg-[#0F3B5F]
+            hover:bg-[#09263D]
+            transition-all
+            duration-300
+            disabled:bg-slate-300
+            disabled:cursor-not-allowed
+            flex
+            justify-center
+            items-center
+          "
+          type="submit"
+        >
           {isLoading ?
             <ClipLoader color="#ffffff" size={24} /> :
             <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
           }
         </button>
+
       </form>
     </div>
   );

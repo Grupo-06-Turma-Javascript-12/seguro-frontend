@@ -109,54 +109,96 @@ function FormSeguro() {
   const carregandoCategoria = categoria.descricao === '';
 
   return (
-    <div className="container flex flex-col mx-auto items-center">
-      <h1 className="text-4xl text-center my-8">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 py-10 px-4">
+      <h1 className="text-4xl font-bold text-[#0F3B5F] mb-10 text-center tracking-wide">
         {id !== undefined ? 'Editar Seguro' : 'Cadastrar Seguro'}
         </h1>
 
-      <form className="flex flex-col w-1/2 gap-4"
-        onSubmit={gerarNovoSeguro}>
+      <form className="w-full max-w-2xl bg-white rounded-2xl shadow-xl border border-slate-200 p-10 space-y-6"
+      onSubmit={gerarNovoSeguro}
+>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Numero da Apolice</label>
+          <label className="text-sm font-semibold text-[#0F3B5F] tracking-wide" htmlFor="titulo">Numero da Apolice</label>
           <input
             type="text"
             placeholder="Apolice"
             name="numero_apolice"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="
+            border border-slate-300
+            rounded-lg
+            px-4 py-3
+            focus:outline-none
+            focus:ring-2
+            focus:ring-[#D4AF37]
+            focus:border-[#D4AF37]
+            transition-all
+            duration-200
+            "
             value={seguro.numero_apolice}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
 
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Cobertura</label>
+          <label className="text-sm font-semibold text-[#0F3B5F] tracking-wide" htmlFor="titulo">Cobertura</label>
           <input
             type="text"
             placeholder="Cobertura"
             name="cobertura"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="
+            border border-slate-300
+            rounded-lg
+            px-4 py-3
+            focus:outline-none
+            focus:ring-2
+            focus:ring-[#D4AF37]
+            focus:border-[#D4AF37]
+            transition-all
+            duration-200
+            "
             value={seguro.cobertura}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="valor">Valor</label>
+          <label className="text-sm font-semibold text-[#0F3B5F] tracking-wide" htmlFor="valor">Valor</label>
           <input
             type="number"
             placeholder="valor"
             name="valor_apolice"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="
+            border border-slate-300
+            rounded-lg
+            px-4 py-3
+            focus:outline-none
+            focus:ring-2
+            focus:ring-[#D4AF37]
+            focus:border-[#D4AF37]
+            transition-all
+            duration-200
+            "
             value={seguro.valor_apolice}
             onChange={(e) => setSeguro({...seguro, valor_apolice: parseFloat(e.target.value)})}
           />
         </div>
 
         <div className="flex flex-col gap-2">
-          <p>Categoria do Seguro</p>
-          <select name="categoria" id="categoria" className="border p-2 border-slate-800 rounded"
+          <p className="text-sm font-semibold text-[#0F3B5F] tracking-wide">Categoria do Seguro</p>
+          <select name="categoria" id="categoria" className="
+          border border-slate-300
+          rounded-lg
+          px-4 py-3
+          bg-white
+          focus:outline-none
+          focus:ring-2
+          focus:ring-[#D4AF37]
+          focus:border-[#D4AF37]
+          transition-all
+          duration-200
+          "
             onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
             <option value="" selected disabled>Selecione uma Categoria</option>
 
@@ -171,7 +213,23 @@ function FormSeguro() {
 
         <button
           type='submit'
-          className='rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800 text-white font-bold w-1/2 mx-auto py-2 flex justify-center'
+          className="
+          w-full
+          mt-4
+          py-3
+          rounded-xl
+          font-semibold
+          text-white
+          bg-[#0F3B5F]
+          hover:bg-[#09263D]
+          transition-all
+          duration-300
+          disabled:bg-slate-300
+          disabled:cursor-not-allowed
+          flex
+          justify-center
+          items-center
+          "
           disabled={carregandoCategoria}
         >
           { isLoading ?

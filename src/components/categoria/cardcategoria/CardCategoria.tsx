@@ -1,37 +1,95 @@
 import { Link } from 'react-router-dom'
 import type { Categoria } from '../../../models/Categoria'
 
-
-
-interface CardCategoriaProps{
-    categoria: Categoria
+interface CardCategoriaProps {
+  categoria: Categoria
 }
 
-function CardCategoria({ categoria }: CardCategoriaProps ) {
+function CardCategoria({ categoria }: CardCategoriaProps) {
   return (
-    <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-      <header className='py-2 px-6 bg-indigo-800 text-white font-bold text-2xl'>
-        Categoria
-      </header>
+    <div className='
+      bg-white
+      rounded-2xl
+      shadow-md
+      hover:shadow-xl
+      transition-all duration-300
+      border border-slate-200
+      flex flex-col
+      justify-between
+      overflow-hidden
+    '>
 
-      <p className='p-8 text-3xl bg-slate-200 h-full'>
-       {categoria.descricao} 
-      </p>
+      {/* HEADER */}
+      <div className='
+        bg-[#0F3B5F]
+        text-white
+        px-6 py-4
+        flex items-center justify-between
+      '>
+        <h2 className='text-lg font-semibold tracking-wide'>
+          Categoria
+        </h2>
 
-      <div className="flex">
+        <span className='
+          text-xs
+          font-semibold
+          px-3 py-1
+          rounded-full
+          bg-[#D4AF37]
+          text-[#0F3B5F]
+        '>
+          ID {categoria.id}
+        </span>
+      </div>
+
+      {/* BODY */}
+      <div className='p-8 flex items-center justify-center'>
+        <p className='
+          text-2xl
+          font-bold
+          text-[#0F3B5F]
+          text-center
+          tracking-wide
+        '>
+          {categoria.descricao}
+        </p>
+      </div>
+
+      {/* FOOTER */}
+      <div className="flex border-t border-slate-200">
+
         <Link
           to={`/editarcategoria/${categoria.id}`}
-          className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-800 flex items-center justify-center py-2'
+          className='
+            w-full
+            text-center
+            py-3
+            font-semibold
+            text-[#0F3B5F]
+            hover:bg-[#0F3B5F]
+            hover:text-white
+            transition-colors duration-200
+          '
         >
-          <button>Editar</button>
+          Editar
         </Link>
 
         <Link
-          to={`/deletarcategoria/${categoria.id}`} 
-          className='text-slate-100 bg-red-400 hover:bg-red-700 w-full flex items-center justify-center'
+          to={`/deletarcategoria/${categoria.id}`}
+          className='
+            w-full
+            text-center
+            py-3
+            font-semibold
+            text-red-600
+            hover:bg-red-600
+            hover:text-white
+            transition-colors duration-200
+          '
         >
-          <button>Deletar</button>
+          Deletar
         </Link>
+
       </div>
     </div>
   )
