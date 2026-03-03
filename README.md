@@ -157,17 +157,6 @@ A aplicação consome a API REST do backend na URL base `http://localhost:4000`.
 | `PUT` | `/seguros/` | Atualizar seguro |
 | `POST` | `/usuarios` | Cadastrar usuário/cliente |
 
----
-
-## 👥 Time de Desenvolvimento
-
-| Nome | Papel | LinkedIn |
-|---|---|---|
-| Débora Campos | Desenvolvedora Full Stack | [linkedin.com/in/debora-campos-](https://www.linkedin.com/in/debora-campos-/) |
-| Paulo Brandão | Desenvolvedor Backend | [linkedin.com/in/paulo-brandao-b7386a179](https://www.linkedin.com/in/paulo-brandao-b7386a179/) |
-| Rafael Bernardo | Especialista em Dados | [linkedin.com/in/rafael-bernardo-dev](https://www.linkedin.com/in/rafael-bernardo-dev/) |
-| Thays Peixoto | UI/UX Designer | [linkedin.com/in/thays-peixoto-da-silva](https://www.linkedin.com/in/thays-peixoto-da-silva/) |
-| Wyrms Cordeiro | Desenvolvedor Full Stack | [linkedin.com/in/wyrms-cordeiro](https://www.linkedin.com/in/wyrms-cordeiro-84374565567o63/) |
 
 ---
 
@@ -176,6 +165,50 @@ A aplicação consome a API REST do backend na URL base `http://localhost:4000`.
 Este projeto foi desenvolvido para fins acadêmicos — **Turma JavaScript 12, Grupo 06**.
 
 ---
+
+## 👥 Equipe de Desenvolvimento 
+
+Desenvolvido pelo **Grupo 06** da **Turma JavaScript 12**.
+
+📧 grupo06turmajavascript12@gmail.com  
+📍 Recife, PE
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="https://github.com/deboracamposs">
+        <img src="https://github.com/deboracamposs.png" width="120px;" alt="Foto de Débora Campos"/><br>
+        <sub><b>Débora Campos</b></sub>
+      </a><br>
+      👩🏻‍💼
+    </td>
+    <td align="center">
+      <a href="https://github.com/paulobrandao26">
+        <img src="https://github.com/paulobrandao26.png" width="120px;" alt="Foto de Paulo Brandão"/><br>
+        <sub><b>Paulo Brandão</b></sub>
+      </a><br>
+      👨🏻‍💼
+    </td>
+    <td align="center">
+      <a href="https://github.com/rafaelbernardodev">
+        <img src="https://github.com/rafaelbernardodev.png" width="120px;" alt="Foto de Rafael Bernardo"/><br>
+        <sub><b>Rafael Bernardo</b></sub>
+      </a><br>
+      👨🏻‍💼
+    </td>
+    <td align="center">
+      <a href="https://github.com/ThaysPei">
+        <img src="https://github.com/ThaysPei.png" width="120px;" alt="Foto de Thais Peixoto"/><br>
+        <sub><b>Thais Peixoto</b></sub>
+      </a><br>
+      👩🏻‍💼
+    </td>
+    <td align="center">
+      <a href="https://github.com/WyrmsCordeiro">
+        <img src="https://github.com/WyrmsCordeiro.png" width="120px;" alt="Foto de Wyrms Cordeiro"/><br>
+        <sub><b>Wyrms Cordeiro</b></sub>
+      </a><br>
+      👨🏻‍💼
 
 <div align="center">
   Feito com 💙 e ☕ pelo Grupo 06
