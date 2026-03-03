@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { DiferenciaisSection } from "../../components/section/DiferenciaisSection";
+import SegurosCarouselSection from '../../components/section/SegurosCarouselSection';
 
 function Home() {
   return (
@@ -24,9 +25,15 @@ function Home() {
                 Solicitar Cotação
               </button>
 
-              <button className="px-6 py-3 border border-[#D4AF37] text-[#D4AF37] rounded-lg hover:bg-[#D4AF37] hover:text-[#0F3B5F] transition-all duration-300">
-                <Link to='/categorias' className='hover:underline'>Conhecer Planos</Link>
-              </button>
+              <Link
+              to="/categorias"
+              className="px-6 py-3 border border-[#D4AF37] 
+             text-[#D4AF37] rounded-lg 
+             hover:bg-[#D4AF37] hover:text-[#0F3B5F] 
+             transition-all duration-300 inline-block"
+              >
+            Conhecer Planos
+              </Link>
             </div>
           </div>
 
@@ -40,6 +47,8 @@ function Home() {
 
         </div>
       </section>
+
+      <SegurosCarouselSection />
 
       <DiferenciaisSection />
 
